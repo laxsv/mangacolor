@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MangaColor — Kembali untuk Melindungimu</title>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:#070a0f;
+    color:#f5f7fb;
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  header{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:#0d1118;
+    border-bottom:1px solid #252c38;
+    height:64px;
+    display:flex;
+    align-items:center;
+  }
+  .nav{
+    width:min(1200px,94%);
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+  }
+  .logo{
+    font-weight:900;
+    font-size:22px;
+    letter-spacing:-.5px;
+  }
+  .logo span{color:#ff3f73}
+  .back{
+    text-decoration:none;
+    color:white;
+    background:#ff3f73;
+    padding:10px 17px;
+    border-radius:9px;
+    font-weight:700;
+    font-size:14px;
+  }
+  main{
+    width:min(1050px,96%);
+    margin:0 auto;
+    padding:28px 0 60px;
+  }
+  .info{
+    margin-bottom:25px;
+  }
+  .label{
+    color:#ff5b84;
+    font-weight:800;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+  }
+  h1{
+    margin:7px 0 10px;
+    font-size:30px;
+    line-height:1.2;
+  }
+  .meta{
+    color:#aeb8c8;
+    font-size:14px;
+  }
+  .reader{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+  .page{
+    width:100%;
+    max-width:900px;
+    display:block;
+    height:auto;
+    background:#111722;
+    border-radius:3px;
+    box-shadow:0 5px 25px rgba(0,0,0,.35);
+  }
+  .missing{
+    width:100%;
+    max-width:900px;
+    min-height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:25px;
+    color:#aeb8c8;
+    background:#111722;
+    border:1px dashed #394353;
+    border-radius:8px;
+  }
+  .bottom{
+    text-align:center;
+    margin-top:35px;
+    color:#8995a8;
+    font-size:13px;
+  }
+  @media(max-width:600px){
+    header{height:56px}
+    .logo{font-size:19px}
+    .back{padding:8px 12px;font-size:12px}
+    main{width:100%;padding:20px 0 40px}
+    .info{padding:0 14px;margin-bottom:18px}
+    h1{font-size:23px}
+    .meta{font-size:12px}
+    .reader{gap:5px}
+    .page{border-radius:0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Manga<span>Color</span></div>
+    <a class="back" href="index.html">← Kembali</a>
+  </div>
+</header>
+
+<main>
+  <section class="info">
+    <div class="label">Manga Original • Chapter 1</div>
+    <h1>Kembali untuk Melindungimu</h1>
+    <div class="meta">Hari yang Berubah • 25 halaman • Romance • Fantasy • Drama</div>
+  </section>
+
+  <section class="reader" id="reader"></section>
+
+  <div class="bottom">MangaColor • Baca sampai halaman terakhir</div>
+</main>
+
+<script>
+const totalPages = 25;
+const reader = document.getElementById("reader");
+
+for(let i=1;i<=totalPages;i++){
+  const n = String(i).padStart(2,"0");
+  const img = document.createElement("img");
+  img.className = "page";
+  img.src = `page_${n}.jpg`;
+  img.alt = `Halaman ${i}`;
+  img.loading = i <= 2 ? "eager" : "lazy";
+
+  img.onerror = function(){
+    const box = document.createElement("div");
+    box.className = "missing";
+    box.innerHTML = `<div>Halaman ${i}<br><small>File page_${n}.jpg belum ditemukan di repository.</small></div>`;
+    img.replaceWith(box);
+  };
+
+  reader.appendChild(img);
+}
+</script>
+
+</body>
+</html>
