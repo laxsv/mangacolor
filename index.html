@@ -1,43 +1,14 @@
-<!doctype html>
-<html lang="id">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MangaColor — Kembali untuk Melindungimu</title>
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kembali untuk Melindungimu — Chapter 1</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#0b0e13;color:#fff;font-family:Arial,sans-serif}
-header{background:#11161e;border-bottom:1px solid #29303c;padding:16px 22px;position:sticky;top:0;z-index:5}
-.logo{font-size:24px;font-weight:900}.logo span{color:#ff4770}
-.wrap{max-width:1050px;margin:auto;padding:28px 18px}
-.hero{display:flex;gap:24px;align-items:center;background:linear-gradient(135deg,#171c29,#21131d);padding:22px;border-radius:18px}
-.cover{width:190px;border-radius:12px}.hero h1{font-size:38px;margin:0 0 8px}.muted{color:#aab1bd;line-height:1.7}
-.btn{display:inline-block;background:#ff4770;color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer;text-decoration:none}
-.chapters{margin-top:30px}.chapter{display:flex;justify-content:space-between;align-items:center;background:#151a22;border:1px solid #29303c;padding:16px;border-radius:12px;margin:10px 0}.chapter small{color:#929aa8}
-.reader{display:none;max-width:900px;margin:auto;padding:18px}.reader.show{display:block}.reader img{width:100%;display:block}.bar{display:flex;gap:10px;align-items:center;margin-bottom:16px}.bar h2{flex:1;font-size:20px}
-@media(max-width:650px){.hero{flex-direction:column;align-items:flex-start}.cover{width:160px}.hero h1{font-size:29px}}
-</style>
-</head>
-<body>
-<header><div class="logo">Manga<span>Color</span></div></header>
-<main id="home" class="wrap">
-<section class="hero">
-<img class="cover" src="chapter1-page1.png" alt="Kembali untuk Melindungimu">
-<div><div style="color:#ff8ba6;font-weight:800">MANGA ORIGINAL • ROMANCE • FANTASY</div>
-<h1>Kembali untuk Melindungimu</h1>
-<p class="muted">Kaito mendapatkan kesempatan kedua setelah sebuah kecelakaan mengubah hidupnya. Di dunia lain, ia bertemu Luna dan mulai menemukan alasan untuk hidup kembali.</p>
-<button class="btn" onclick="read()">📖 Baca Chapter 1</button></div>
-</section>
-<section class="chapters"><h2>Daftar Chapter</h2>
-<div class="chapter"><div><b>Chapter 1 — Hari yang Berubah</b><br><small>Awal perjalanan Kaito</small></div><button class="btn" onclick="read()">Baca</button></div>
-<div class="chapter"><div><b>Chapter 2 — Dunia yang Berbeda</b><br><small>Segera hadir</small></div><button class="btn" disabled>Segera</button></div>
-<div class="chapter"><div><b>Chapter 3 — Pertemuan Kembali</b><br><small>Segera hadir</small></div><button class="btn" disabled>Segera</button></div>
-</section></main>
-<section id="reader" class="reader">
-<div class="bar"><button class="btn" onclick="home()">← Kembali</button><h2>Chapter 1 — Hari yang Berubah</h2></div>
-<img src="chapter1-page1.png" alt="Chapter 1 halaman manga">
-<p class="muted">Halaman berikutnya akan ditambahkan ke chapter ini.</p>
-</section>
-<script>
-function read(){document.getElementById('home').style.display='none';document.getElementById('reader').classList.add('show');scrollTo(0,0)}
-function home(){document.getElementById('reader').classList.remove('show');document.getElementById('home').style.display='block';scrollTo(0,0)}
-</script>
+*{box-sizing:border-box}body{margin:0;background:#080b10;color:#f5f7fb;font-family:Arial,sans-serif}
+header{position:sticky;top:0;z-index:10;background:#0d1118ee;backdrop-filter:blur(12px);border-bottom:1px solid #252c38}
+.nav{max-width:920px;margin:auto;padding:14px 18px;display:flex;align-items:center}.logo{font-weight:900;font-size:23px}.logo b{color:#ff4770}.btn{margin-left:auto;border:0;border-radius:10px;padding:10px 15px;background:#ff4770;color:#fff;font-weight:800;cursor:pointer}
+.intro{max-width:920px;margin:auto;padding:28px 18px 10px}.intro h1{font-size:36px;margin:6px 0}.muted{color:#aeb6c3;line-height:1.7}
+.reader{max-width:920px;margin:auto;padding:10px 18px 45px}.page{background:#10151d;border:1px solid #252c38;border-radius:10px;overflow:hidden;margin:0 0 20px}.page img{display:block;width:100%;height:auto}.caption{padding:15px}.caption h2{font-size:18px;margin:0 0 7px}.caption p{color:#aeb6c3;line-height:1.7;margin:0}
+</style></head><body>
+<header><div class="nav"><div class="logo">Manga<b>Color</b></div><button class="btn" onclick="history.back()">← Kembali</button></div></header>
+<section class="intro"><div style="color:#ff7795;font-weight:800">MANGA ORIGINAL • CHAPTER 1</div><h1>Kembali untuk Melindungimu</h1><p class="muted"><b>Hari yang Berubah</b> · 25 halaman · Romance · Fantasy · Drama</p></section>
+<main class="reader" id="reader"></main>
+<script>const pages=[{"page": 2, "title": "Pagi yang Biasa", "text": "Namaku Kaito. Seorang siswa SMA biasa yang menjalani hari-hari tanpa tujuan yang jelas. Bagiku, hari ini seharusnya sama seperti kemarin.", "image": "images/page_02.jpg"}, {"page": 3, "title": "Sebuah Sapaan", "text": "Di depan kelas, Sakura menyapaku seperti biasa. Senyumnya sederhana, tetapi entah mengapa selalu membuat hari terasa sedikit lebih ringan.", "image": "images/page_03.jpg"}, {"page": 4, "title": "Teman yang Selalu Ada", "text": "Kami makan siang bersama. Sakura bercerita tentang mimpinya, sementara aku lebih banyak mendengarkan. Untuk pertama kalinya, aku bertanya pada diri sendiri: kapan terakhir kali aku merasa bahagia?", "image": "images/page_04.jpg"}, {"page": 5, "title": "Sebuah Perasaan", "text": "Saat pulang sekolah, Sakura bertanya apakah aku punya sesuatu yang ingin kulakukan setelah lulus. Aku tidak bisa menjawab. Ia hanya tersenyum dan berkata bahwa aku masih punya banyak waktu.", "image": "images/page_05.jpg"}, {"page": 6, "title": "Senja di Kota", "text": "Kami berhenti di sebuah tempat yang menghadap kota. Sakura berkata, “Kalau suatu hari kamu kehilangan arah, jangan takut untuk memulai lagi.” Kalimat itu terus terngiang di kepalaku.", "image": "images/page_06.jpg"}, {"page": 7, "title": "Hari yang Berubah", "text": "Beberapa hari berlalu. Semuanya tampak normal, sampai malam itu. Aku pulang bersama Sakura di tengah hujan.", "image": "images/page_07.jpg"}, {"page": 8, "title": "Pesan Terakhir", "text": "Sakura mengatakan ia senang karena bisa mengenalku. Aku tertawa kecil dan berjanji akan menemuinya lagi besok.", "image": "images/page_08.jpg"}, {"page": 9, "title": "Hujan", "text": "Lampu jalan memantul di aspal basah. Dari kejauhan, suara mesin kendaraan semakin keras.", "image": "images/page_09.jpg"}, {"page": 10, "title": "Kecelakaan", "text": "Sebuah truk kehilangan kendali. Aku hanya sempat melihat Sakura berdiri di depanku. Tanpa berpikir, aku berlari untuk mendorongnya menjauh.", "image": "images/page_10.jpg"}, {"page": 11, "title": "Gelap", "text": "“Sakura…” Itu kata terakhir yang berhasil keluar dari mulutku sebelum semuanya menjadi gelap.", "image": "images/page_11.jpg"}, {"page": 12, "title": "Di Antara Hidup dan Mati", "text": "Aku tidak tahu berapa lama aku berada dalam kegelapan. Tidak ada suara. Tidak ada rasa sakit. Hanya satu penyesalan yang terus muncul: aku belum sempat mengatakan betapa berartinya dia.", "image": "images/page_12.jpg"}, {"page": 13, "title": "Cahaya", "text": "Sebuah cahaya putih muncul di kejauhan. Aku mengulurkan tangan dan mendengar suara asing memanggil namaku.", "image": "images/page_13.jpg"}, {"page": 14, "title": "Dunia Baru", "text": "Saat membuka mata, aku melihat langit biru yang terlalu luas dan sebuah kota yang tidak pernah kulihat sebelumnya.", "image": "images/page_14.jpg"}, {"page": 15, "title": "Aku Masih Hidup", "text": "“Aku… masih hidup?” Aku memeriksa tubuhku. Tidak ada luka. Namun dunia di sekelilingku jelas bukan duniaku.", "image": "images/page_15.jpg"}, {"page": 16, "title": "Seseorang Mendekat", "text": "Seorang gadis berambut putih mendekat. Tatapannya membuat jantungku berhenti sejenak karena ia mengingatkanku pada seseorang.", "image": "images/page_16.jpg"}, {"page": 17, "title": "Namanya Luna", "text": "“Kamu akhirnya sadar.” Gadis itu memperkenalkan dirinya sebagai Luna. Ia berkata bahwa aku berada di dunia bernama Aether.", "image": "images/page_17.jpg"}, {"page": 18, "title": "Bukan Bumi", "text": "Aku melihat menara, sihir, dan makhluk yang belum pernah kulihat. Luna menjelaskan bahwa manusia di dunia ini hidup berdampingan dengan sihir dan monster.", "image": "images/page_18.jpg"}, {"page": 19, "title": "Kesempatan Kedua", "text": "Aku bertanya mengapa aku berada di sana. Luna menjawab bahwa mungkin dunia ini memberiku kesempatan kedua untuk memperbaiki sesuatu.", "image": "images/page_19.jpg"}, {"page": 20, "title": "Ancaman", "text": "Sebelum aku sempat bertanya lebih jauh, terdengar raungan dari hutan. Wajah Luna berubah serius.", "image": "images/page_20.jpg"}, {"page": 21, "title": "Monster", "text": "Sosok hitam muncul di antara pepohonan. Aku mundur, tetapi Luna berdiri di depanku.", "image": "images/page_21.jpg"}, {"page": 22, "title": "Aku Tidak Akan Lari", "text": "Untuk pertama kalinya sejak tiba di dunia ini, aku merasa takut kehilangan seseorang lagi. Aku mengambil langkah ke depan.", "image": "images/page_22.jpg"}, {"page": 23, "title": "Kekuatan", "text": "Sebuah cahaya biru muncul dari tanganku. Aku tidak tahu apa itu, tetapi tubuhku seolah mengingat sesuatu yang belum pernah kupelajari.", "image": "images/page_23.jpg"}, {"page": 24, "title": "Pilihan", "text": "Luna berteriak agar aku mundur. Namun aku teringat kata-kata Sakura: jangan takut untuk memulai lagi.", "image": "images/page_24.jpg"}, {"page": 25, "title": "Janji", "text": "Aku menatap monster itu dan menggenggam tangan. “Kalau ini benar-benar kesempatan keduaku… aku tidak akan kehilangan orang lain lagi.”", "image": "images/page_25.jpg"}, {"page": 26, "title": "Awal Perjalanan", "text": "Monster itu menerjang. Cahaya biru meledak. Di balik cahaya tersebut, sebuah dunia baru menunggu jawaban Kaito.", "image": "images/page_26.jpg"}];const r=document.getElementById('reader');pages.forEach(p=>{const e=document.createElement('article');e.className='page';e.innerHTML='<img src="'+p.image+'" alt="Halaman '+p.page+'"><div class="caption"><h2>Halaman '+p.page+' — '+p.title+'</h2><p>'+p.text+'</p></div>';r.appendChild(e)});</script>
 </body></html>
